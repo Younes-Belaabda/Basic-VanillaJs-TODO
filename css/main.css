@@ -1,0 +1,112 @@
+/* Global Style */
+* {
+  font-family: roboto;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0.5em;
+}
+
+header {
+  background-color: rgba(222, 231, 91, 0.863);
+  padding: 0.5em 0;
+  border-radius: 0.5em;
+}
+
+/* Style Rely To Control Panel Of The Task Manager */
+.task-description {
+  width: 50%;
+  margin: auto;
+}
+
+.task-manager {
+  width: 100%;
+}
+
+.task-manager > input {
+  width: 100%;
+}
+
+.task-manager p {
+  text-align: center;
+  margin: 0.5em;
+}
+
+.task-btn-crud {
+  padding: 0.5em 0;
+}
+
+.task-crud {
+  padding: 0.5em 0;
+}
+
+/* Style Rely To Table */
+.table {
+  width: 100%;
+  /* border: 1px solid black; */
+}
+.table thead tr {
+  background-color: rgba(222, 231, 91, 0.863);
+}
+.table tbody tr {
+  background-color: rgb(79, 80, 80);
+  color: white;
+}
+.table thead tr th:nth-child(1) {
+  border-radius: 0.5em 0 0 0.5em;
+}
+.table thead tr th:last-child {
+  border-radius: 0 0.5em 0.5em 0;
+}
+.table tr > td,
+th {
+  border: 1px solid black;
+  padding: 0.5em 0.2em;
+}
+.table tr button {
+  display: block;
+  width: 80%;
+  margin: auto;
+}
+.table tr [type="checkbox"] {
+  display: block;
+  margin: auto;
+}
+
+/* Helper Classes */
+.input {
+  padding: 0.5em 0.2em;
+  border-radius: 0.5em;
+  border: 0.2em solid;
+  outline: none;
+  /* color: white; */
+  color: rgb(79, 80, 80);
+}
+.input::placeholder {
+  color: rgb(79, 80, 80);
+}
+.input:focus {
+  background-color: rgb(79, 80, 80);
+  color: white;
+}
+
+.input:focus::placeholder {
+  color: white;
+}
+
+.btn {
+  background-color: rgb(79, 80, 80);
+  color: white;
+  padding: 0.3em;
+  width: 100px;
+  outline: none;
+  border: 0.2em solid;
+}
+.btn-yellow {
+  background-color: rgba(222, 231, 91, 0.863);
+  width: 80%;
+}
+.text {
+}

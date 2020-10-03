@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do Vanilla Js</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="task-description">
+        <div class="task-manager">
+          <p>Task Title</p>
+          <input
+            id="task_title"
+            class="input"
+            type="text"
+            placeholder="@title"
+            pattern=".{1,}"
+          />
+          <p>Task Description</p>
+          <input
+            id="task_body"
+            class="input"
+            type="text"
+            placeholder="@content"
+            pattern=".{1,}"
+          />
+        </div>
+        <div class="task-btn-crud">
+          <input id="btn_add_task" class="btn" type="button" value="New task" />
+          <input
+            id="btn_done_task"
+            class="btn"
+            type="button"
+            value="Done"
+            hidden
+          />
+        </div>
+      </div>
+    </header>
+    <div class="task-crud">
+      <table id="tasks" class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Completed</th>
+            <th>Modify</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Code Goes Here -->
+        </tbody>
+      </table>
+    </div>
+    <script defer src="./Models/task.js"></script>
+    <script defer src="./js/todo.js"></script>
+    <script defer src="./js/dom.js"></script>
+  </body>
+</html>
