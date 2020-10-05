@@ -1,42 +1,46 @@
+/* Modules Dependecies */
+import {all_tasks} from '../models/db_tasks.mjs'
+import {get_task} from '../models/m_task.mjs'
+
 const add_element = (task) => {
-  // Push Task Item To Tasks Table
-  tasks.push(task);
+  // Push Task Item To all_tasks Table
+  all_tasks.push(task);
 };
 const show_elements = () => {
-  // Push Tasks To Document
-  const tasks_dom = document.querySelector("#tasks > tbody");
-  tasks_dom.innerHTML = "";
-  tasks.forEach((value) => {
-    tasks_dom.append(create_element(value));
+  // Push all_tasks To Document
+  const all_tasks_dom = document.querySelector("#tasks > tbody");
+  all_tasks_dom.innerHTML = "";
+  all_tasks.forEach((value) => {
+    all_tasks_dom.append(create_element(value));
   });
 };
 const remove_element = function (id) {
   let index = -1;
-  for (var i = 0; i < tasks.length; i++) {
-    if (tasks[i]._id === id) {
+  for (var i = 0; i < all_tasks.length; i++) {
+    if (all_tasks[i]._id === id) {
       index = i;
       break;
     }
   }
-  tasks.splice(index, 1);
+  all_tasks.splice(index, 1);
   show_elements();
 };
 const modify_element = function (id) {
   // Get index of the Task Object
   let index = -1;
-  for (var i = 0; i < tasks.length; i++) {
-    if (tasks[i]._id == id) {
+  for (var i = 0; i < all_tasks.length; i++) {
+    if (all_tasks[i]._id == id) {
       index = i;
       break;
     }
   }
   // Fill The Inputs
-  task_title.value = tasks[index]._title;
-  task_body.value = tasks[index]._body;
+  task_title.value = all_tasks[index]._title;
+  task_body.value = all_tasks[index]._body;
   // Update The Object
   btn_done_task.removeAttribute("hidden");
-  get_task(tasks[index]);
-  // Show Tasks
+  get_task(all_tasks[index]);
+  // Show all_task
   show_elements();
 };
 const create_element = (task) => {
@@ -67,7 +71,7 @@ const create_element = (task) => {
       task._completed = false;
       task_item.style.backgroundColor = "";
     }
-    // console.log(tasks);
+    // console.log(all_task);
   });
   task_completed.append(task_completed_btn);
 
@@ -96,7 +100,7 @@ const create_element = (task) => {
   };
   task_modify.append(btn_modify);
 
-  // Completed Tasks
+  // Completed all_task
   if (task._completed) {
     task_item.style.backgroundColor = "#e91e63e0";
     task_completed_btn.checked = true;
@@ -112,3 +116,5 @@ const create_element = (task) => {
 
   return task_item;
 };
+
+export {add_element,show_elements,remove_element,modify_element,create_element}
